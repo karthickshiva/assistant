@@ -1,73 +1,81 @@
-# React + TypeScript + Vite
+# Personal Assistant
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a React + TypeScript + Vite app for a personal assistant Progressive Web App (PWA). It currently provides the application shell and route scaffolding for a lightweight planner that can grow into a cross-device assistant for daily organization.
 
-Currently, two official plugins are available:
+## Current App Scope
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The app includes a shared layout with navigation and placeholder screens for:
 
-## React Compiler
+- Dashboard
+- Tasks
+- Journal
+- Settings
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The long-term product direction in [`docs/personal-assistant-pwa-plan.md`](/Users/karthick-5452/projects/assistant/docs/personal-assistant-pwa-plan.md) also covers expenses, reminders, notes, and cloud sync.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React 19
+- TypeScript
+- Vite
+- React Router
+- `vite-plugin-pwa` for service worker and manifest generation
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## How To Run
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Prerequisites
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Node.js 20+ recommended
+- npm
+
+### Install dependencies
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Start the development server
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+By default, Vite will print a local URL such as `http://localhost:5173`.
+
+### Build for production
+
+```bash
+npm run build
+```
+
+### Preview the production build
+
+```bash
+npm run preview
+```
+
+### Run lint checks
+
+```bash
+npm run lint
+```
+
+## PWA Notes
+
+The app is configured with `vite-plugin-pwa` and registers its service worker automatically. The current manifest uses the app name `Personal Assistant PWA` and is set up for standalone installation.
+
+## Project Structure
+
+```txt
+src/
+  App.tsx         app shell and navigation
+  main.tsx        router setup and PWA registration
+  App.css         shell styles
+  index.css       global styles
+docs/
+  personal-assistant-pwa-plan.md
+```
+
+## Status
+
+This repository is at the scaffold stage. The routing, layout, and PWA wiring are in place, while the feature modules still need their actual data models, forms, and persistence.
