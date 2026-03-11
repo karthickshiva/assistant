@@ -112,6 +112,11 @@ Acceptance Criteria:
 
 ---
 
+
+## Task status updates
+- [x] #1 **Initialize Vite + TypeScript PWA skeleton** — Closed.
+  - Closure comment: scaffold is in place with app shell + route placeholders, and build/lint checks passing (`npm run build`, `npm run lint`).
+
 ## Dependency order
 - #1 → #2 → #3/#5 → #7-14 → #15-20 → #21-25
 
