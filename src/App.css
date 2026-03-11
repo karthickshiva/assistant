@@ -1,0 +1,48 @@
+.app-shell {
+  margin: 0 auto;
+  max-width: 960px;
+  min-height: 100vh;
+  padding: 1.5rem;
+}
+
+.app-header h1 {
+  margin-bottom: 0.25rem;
+}
+
+.app-header p {
+  margin-top: 0;
+  color: #8a8fa5;
+}
+
+.app-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.nav-link {
+  border: 1px solid #313750;
+  border-radius: 999px;
+  color: #c7d0f2;
+  padding: 0.45rem 0.9rem;
+  text-decoration: none;
+}
+
+.nav-link.active {
+  background: #616fbf;
+  border-color: #616fbf;
+  color: #fff;
+}
+
+.app-main {
+  background: #171c2f;
+  border: 1px solid #303a63;
+  border-radius: 12px;
+  min-height: 280px;
+  padding: 1.25rem;
+}
+
+.app-main h2 {
+  margin-top: 0;
+}
